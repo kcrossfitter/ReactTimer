@@ -6,6 +6,10 @@ class Controls extends Component {
     this.onStatusChange = this.onStatusChange.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    console.log('componentWillReceiveProps', newProps.countdownStatus);
+  }
+  
   onStatusChange(newStatus) {
     return () => {
       this.props.onStatusChange(newStatus);
